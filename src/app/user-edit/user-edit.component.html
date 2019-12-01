@@ -1,0 +1,29 @@
+<div class="container w-50 my-5 text-info">
+    <h2 class="display-4 text-info text-center"> USER FORM</h2>
+
+    <div class="form-group">
+        <label for="id">ID:</label>
+        <input [(ngModel)]="usereditdata.id" name="id"  type="text" class="form-control" id="id" value="{{user.id}}">
+    </div>
+    <div class="form-group">
+            <label for="name">NAME:</label>
+            <input  [(ngModel)]="usereditdata.name" name="name"  type="text" class="form-control" id="name" value="{{user.name}}">
+        </div>
+        <div class="form-group">
+                <label for="email">EMAIL:</label>
+                <input  [(ngModel)]="usereditdata.email" name="email"   type="email" class="form-control" id="email" value="{{user.email}}">
+            </div>
+            <div class="form-group">
+                    <label for="phone">PHONE:</label>
+                    <input   [(ngModel)]="usereditdata.phone" name="phone"  type="tel" class="form-control" id="phone" value="{{user.phone}}">
+                </div>
+                <div class="form-group">
+                        <label for="city">city:</label>
+                        <input  [(ngModel)]="usereditdata.city" name="city" type="text" class="form-control" id="city" value="{{user.address.city}}">
+                    </div>
+    <div class="d-flex justify-content-end mb-5">
+        <button (click)=" saveuserdata()"class="btn btn-success my-5 text-white mr-4">SAVE</button>
+        <button (click)="canceluserdata()" class="btn btn-danger my-5 text-white">CANCEL</button>
+    </div>
+</div>
+

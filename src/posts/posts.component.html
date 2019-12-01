@@ -1,0 +1,16 @@
+<div class="container w-50">
+
+
+
+<accordion [isAnimated]="true" class="bg-dark">
+        <accordion-group heading="{{item.title}}" *ngFor="let item of postresponse" class=" p-3">
+          
+            <h6>{{item.id}}</h6>
+            <h6>{{item.userId}}</h6>
+            <h6>{{item.body}}</h6>
+        </accordion-group>
+       
+      </accordion>
+  
+  </div>
+  

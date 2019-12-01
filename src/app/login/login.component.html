@@ -1,0 +1,26 @@
+<div class="container " >
+   <div class="d-flex justify-content-center align-content-center">
+    <div class="card my-5 w-25 bg-dark ">
+        <div class="card-body">
+            <div class="d-flex justify-content-center">
+                    <img tooltip="VBM INFO TECH" class="rounded-circle w-50" src="./assets/vbm.png">
+            </div>
+            <div class="W-50">
+                <div class="form-group">
+                    <label class="text-white" for="username">Username</label>
+                    <input type="text" class="form-control" placeholder="Enter Username" id="username" #username>
+                </div>
+                <div class="form-group">
+                        <label class="text-white" for="password">password</label>
+                        <input type="password" class="form-control" placeholder="Enter password" id="password" #password >
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-primary" (click)="validuser(username.value,password.value,$event)">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div> 
+    
+    
+</div>

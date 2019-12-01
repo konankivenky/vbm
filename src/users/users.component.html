@@ -1,0 +1,61 @@
+<div class="container my-5">
+
+    <div class="d-flex justify-content-end ">
+        
+            <ng-select class="custom w-25"  [items]=response bindValue="id" bindLabel="name" placeholder="search by name" (change)="namedisplay($event)"></ng-select>
+    </div>
+    <table class="table table-striped">
+        <thead class="bg-dark text-white">
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>PHONE</th>
+                <th>CITY</th>
+                <th>ACTION</th> 
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of response" id="{{ item.id }}">
+                <td  popover="{{item.id}}" containerClass="customClass"> {{ item.id }} </td>
+                <td  tooltip="{{item.name}}"> {{ item.name }} </td>
+                <td popover="{{item.email}}"> {{ item.email }} </td>
+                <td tooltip="{{item.phone}}"> {{ item.phone }} </td>
+                <td popover="{{item.address.city}}"> {{ item.address.city }} </td>
+                <td> 
+                    <a  routerLink="/user_edit/{{ item.id }}" class="btn btn-primary text-white mr-3">EDIT</a>
+
+                    <button class="btn btn-success text-white" (click)="openModal(template)">view</button>
+                    <ng-template #template >
+                        <div class="modal-header text-white bg-dark">
+                          <h4 class="modal-title pull-left bg-dark">This is {{item.name}}</h4>
+                          <button type="button" class="close pull-right text-danger" aria-label="Close" (click)="modalRef.hide()">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body bg-light">
+                          <ul class="list-group">
+                              <li class=" list-group-item   ">{{item.id}}</li>
+                              <li class=" list-group-item   ">{{item.username}}</li>
+                              <li  class=" list-group-item   ">{{item.email}}</li>
+                              <li class=" list-group-item  ">{{item.phone}}</li>
+                              <li class=" list-group-item  ">{{item.address.city}}</li>
+                              <li class=" list-group-item text-info ">{{item.website}}</li>
+
+                          </ul>
+                          <div class="d-flex justify-content-end my-3">
+                                <button class="btn btn-primary  text-white" routerLink="/view/{{item.id}} ">GOTO USERCARD</button>
+                          </div>
+                                
+                    
+                        </div>
+                        
+
+                      </ng-template>
+                    
+                 </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
